@@ -13,14 +13,15 @@ import os #Permite gestionar archivos y carpetas
 especie = input("Introduce el nombre científico de la especie (ej: Orcinus orca): ").strip()
 
 
-#-------------------- CREAMOS DIRECTORIO PARA LOS DATOS---------------------------
+#-------------------- CREAMOS DIRECTORIO PARA LOS DATOS-------Or--------------------
 # Creamos carpeta de especie
 
-carpeta_especies = os.path.join(".", "especies")
+ruta_de_este_script = os.path.dirname(os.path.abspath(__file__))
+ruta_raiz = os.path.dirname(ruta_de_este_script)
+carpeta_especies = os.path.join(ruta_raiz, "data", "especies")
 if not os.path.exists(carpeta_especies):
     os.makedirs(carpeta_especies)
     print(f"Carpeta creada: {carpeta_especies}")
-
 # Creamos un nombre de carpeta seguro (ej: "Delphinus delphis" -> "Delphinus_delphis")
 
 nombre_carpeta=os.path.join(carpeta_especies, especie.replace(" ", "_"))
