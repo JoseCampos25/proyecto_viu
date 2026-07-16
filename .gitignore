@@ -1,0 +1,8 @@
+# Ignorar carpetas de datos pesados y temporales
+data/carpeta_cubo/
+parametros_ambientales/
+clima_tfm/
+.conda/
+
+# Ignorar cualquier archivo de Copernicus (.nc)
+*.nc
