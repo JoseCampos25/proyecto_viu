@@ -4,14 +4,7 @@
 
 import copernicusmarine #acceder, explorar y descargar datos oceánicos del servicio Copernicus Marine
 import os   ##Permite gestionar archivos y carpetas
-
-#-------------------- CREAMOS DIRECTORIO PARA LOS DATOS---------------------------
-
-nombre_carpeta= "parametros_ambientales" #definimos la carpeta con el nombre que vamos a crear
-ruta_superior= os.path.join("..", nombre_carpeta) #Ruta donde le vamos a indicar crear la carpeta, el ".." indica en el directorio de arriba del de trabajo
-os.makedirs(ruta_superior, exist_ok=True) #crea la carpeta si no existe y si existe, con "exist_ok=True" no lanza error
-
-print(f"Se ha creado la carpeta en: {os.path.abspath(ruta_superior)}") #imprime por pantalla la ruta absoluta del directorio creado, "os.path.abspath()" convierte la ruta en absoluta
+import shutil
 
 
 
@@ -31,6 +24,21 @@ def descarga_datos(): #definimos una funcion que despues llamaremos, es una reco
     ruta_de_este_script = os.path.dirname(os.path.abspath(__file__))
     ruta_raiz = os.path.dirname(ruta_de_este_script)
     ruta_cubo = os.path.join(ruta_raiz, "data", "carpeta_cubo", "par_ambientales")
+# Si la carpeta ya existe con descargas anteriores (o corruptas), la borramos entera
+    if os.path.exists(ruta_cubo):
+        print(f"Detectada carpeta previa en: {ruta_cubo}")
+        print("Limpiando archivos antiguos de forma segura...")
+        for archivo in os.listdir(ruta_cubo):
+            ruta_archivo = os.path.join(ruta_cubo, archivo)
+            try:
+                if os.path.isfile(ruta_archivo):
+                    os.remove(ruta_archivo)
+                    print(f"Eliminado: {archivo}")
+            except Exception as e:
+                print(f"No se pudo eliminar {archivo}: {e}")
+    else:
+        os.makedirs(ruta_cubo, exist_ok=True)
+        print(f"Carpeta de destino creada en: {ruta_cubo}")
     os.makedirs(ruta_cubo, exist_ok=True)
 
     par_fisicos = os.path.join(ruta_cubo, "para_fisicos.nc")
@@ -67,10 +75,10 @@ def descarga_datos(): #definimos una funcion que despues llamaremos, es una reco
         output_filename= par_biog
     )
 
-    #PARAMETRO PROFUNDIDAD (BARIMETRIA)
+    #PARAMETRO PROFUNDIDAD (BATIMETRIA)
 
-    par_bar= os.path.join(ruta_cubo, "para_bar.nc")
-    print("Descargando datos de barimetria")
+    par_bat= os.path.join(ruta_cubo, "para_bat.nc")
+    print("Descargando datos de batimetria")
 
     copernicusmarine.subset(
          dataset_id="cmems_mod_glo_phy_my_0.083deg_static",
@@ -79,7 +87,7 @@ def descarga_datos(): #definimos una funcion que despues llamaremos, es una reco
         maximum_longitude= rango_longitud[1],
         minimum_latitude= rango_latitud[0],
         maximum_latitude= rango_latitud[1],
-        output_filename= par_bar
+        output_filename= par_bat
     )
 
     print(f"Descarga completada! Los archivos estan en {nombre_carpeta}")
