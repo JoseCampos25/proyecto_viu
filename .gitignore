@@ -6,3 +6,11 @@ clima_tfm/
 
 # Ignorar cualquier archivo de Copernicus (.nc)
 *.nc
+# --- NUEVO: Ignorar los datos crudos de avistamientos de OBIS ---
+*.csv
+
+# --- NUEVO: Ignorar los datos gebco---
+.tif
+
+# --- NUEVO: Ignorar los datos entrenamiento---
+.pkl

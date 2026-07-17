@@ -90,7 +90,7 @@ def descarga_datos(): #definimos una funcion que despues llamaremos, es una reco
         output_filename= par_bat
     )
 
-    print(f"Descarga completada! Los archivos estan en {nombre_carpeta}")
+    print(f"Descarga completada! Los archivos estan en {ruta_cubo}")
 
 if __name__ == "__main__":  #Se lanza la el programa descarga_datos si ejecute/abro este script. Puede considerarse como una seguridad para que no se lance automaticamente
     descarga_datos()
