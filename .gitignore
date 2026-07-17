@@ -1,16 +1,13 @@
-# Ignorar carpetas de datos pesados y temporales
+# Ignorar carpetas
 data/carpeta_cubo/
 parametros_ambientales/
 clima_tfm/
 .conda/
+__pycache__/
 
-# Ignorar cualquier archivo de Copernicus (.nc)
-*.nc
-# --- NUEVO: Ignorar los datos crudos de avistamientos de OBIS ---
-*.csv
-
-# --- NUEVO: Ignorar los datos gebco---
-.tif
-
-# --- NUEVO: Ignorar los datos entrenamiento---
-.pkl
+# Ignorar extensiones (con doble asterisco para recursividad)
+**/*.nc
+**/*.csv
+**/*.tif
+**/*.pkl
+**/*.png
