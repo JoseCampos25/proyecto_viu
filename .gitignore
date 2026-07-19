@@ -16,4 +16,4 @@ __pycache__/
 data/gis/coast/ne_10m_coastline.*
 
 # Ignorar archivos de Natural Earth Coastline
-data/gis/coast/ne_10m_ports.*
+data/gis/ports/ne_10m_ports.*
