@@ -1,0 +1,51 @@
+INFORME TFM: MODELADO DE NICHOS PARA STENELLA COERULEOALBA
+======================================================================
+
+ MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
+AUC (Validación Cruzada): 0.9410
+ Precisión Global: 94.62% | F1-Score: 0.9443
+--------------------------------------------------
+deptho   |  39.02% ███████████████████
+uo       |  17.28% ████████
+chl      |  10.50% █████
+thetao   |   9.03% ████
+o2       |   7.55% ███
+vo       |   6.00% ██
+zos      |   5.34% ██
+so       |   5.27% ██
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.95      0.95      0.95       608
+           1       0.94      0.95      0.94       564
+
+    accuracy                           0.95      1172
+   macro avg       0.95      0.95      0.95      1172
+weighted avg       0.95      0.95      0.95      1172
+
+
+ ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
+AUC (Validación Cruzada): 0.8229
+ Precisión Global: 93.34% | F1-Score: 0.9304
+--------------------------------------------------
+uo       |  23.89% ███████████
+chl      |  17.57% ████████
+thetao   |  14.55% ███████
+o2       |  12.84% ██████
+vo       |  10.95% █████
+zos      |  10.36% █████
+so       |   9.84% ████
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.93      0.94      0.94       608
+           1       0.94      0.92      0.93       564
+
+    accuracy                           0.93      1172
+   macro avg       0.93      0.93      0.93      1172
+weighted avg       0.93      0.93      0.93      1172
+
+
+IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1181

@@ -1,20 +1,18 @@
 INFORME TFM: MODELADO DE NICHOS PARA MEGAPTERA NOVAEANGLIAE
 ======================================================================
-Muestra total: 2252 registros (Balanceados 1:1)
-======================================================================
 
  MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
 AUC (Validación Cruzada): 0.9501
  Precisión Global: 95.79% | F1-Score: 0.9531
 --------------------------------------------------
- 1º | deptho   |  48.48% ████████████████████████
- 2º | uo       |  14.05% ███████
- 3º | vo       |   7.19% ███
- 4º | so       |   6.68% ███
- 5º | thetao   |   6.36% ███
- 6º | chl      |   6.12% ███
- 7º | o2       |   6.05% ███
- 8º | zos      |   5.07% ██
+deptho   |  48.48% ████████████████████████
+uo       |  14.05% ███████
+vo       |   7.19% ███
+so       |   6.68% ███
+thetao   |   6.36% ███
+chl      |   6.12% ███
+o2       |   6.05% ███
+zos      |   5.07% ██
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
@@ -31,13 +29,13 @@ weighted avg       0.96      0.96      0.96       451
 AUC (Validación Cruzada): 0.7332
  Precisión Global: 94.24% | F1-Score: 0.9347
 --------------------------------------------------
- 1º | uo       |  22.63% ███████████
- 2º | so       |  13.64% ██████
- 3º | vo       |  13.35% ██████
- 4º | o2       |  12.82% ██████
- 5º | chl      |  12.55% ██████
- 6º | zos      |  12.52% ██████
- 7º | thetao   |  12.49% ██████
+uo       |  22.63% ███████████
+so       |  13.64% ██████
+vo       |  13.35% ██████
+o2       |  12.82% ██████
+chl      |  12.55% ██████
+zos      |  12.52% ██████
+thetao   |  12.49% ██████
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
@@ -50,7 +48,4 @@ DETALLE ESTADÍSTICO:
 weighted avg       0.94      0.94      0.94       451
 
 
-======================================================================
- IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.2169
-NUEVA VARIABLE DOMINANTE: uo
-======================================================================
+IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.2169

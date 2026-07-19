@@ -1,0 +1,56 @@
+INFORME TFM: MODELADO DE NICHOS PARA GRAMPUS GRISEUS
+======================================================================
+Muestra total: 10229 registros (Balanceados 1:1)
+======================================================================
+
+ MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
+AUC (Validación Cruzada): 0.9497
+ Precisión Global: 97.12% | F1-Score: 0.9673
+--------------------------------------------------
+ 1º | deptho   |  36.80% ██████████████████
+ 2º | uo       |  22.98% ███████████
+ 3º | thetao   |   8.78% ████
+ 4º | chl      |   8.62% ████
+ 5º | vo       |   7.33% ███
+ 6º | o2       |   6.70% ███
+ 7º | so       |   4.46% ██
+ 8º | zos      |   4.32% ██
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.97      0.97      0.97      1144
+           1       0.97      0.97      0.97       902
+
+    accuracy                           0.97      2046
+   macro avg       0.97      0.97      0.97      2046
+weighted avg       0.97      0.97      0.97      2046
+
+
+ ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
+AUC (Validación Cruzada): 0.8172
+ Precisión Global: 96.29% | F1-Score: 0.9574
+--------------------------------------------------
+ 1º | uo       |  29.86% ██████████████
+ 2º | chl      |  14.80% ███████
+ 3º | thetao   |  14.18% ███████
+ 4º | vo       |  12.00% █████
+ 5º | o2       |  11.27% █████
+ 6º | zos      |   9.36% ████
+ 7º | so       |   8.52% ████
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.97      1144
+           1       0.97      0.95      0.96       902
+
+    accuracy                           0.96      2046
+   macro avg       0.96      0.96      0.96      2046
+weighted avg       0.96      0.96      0.96      2046
+
+
+======================================================================
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1325
+NUEVA VARIABLE DOMINANTE: uo
+======================================================================

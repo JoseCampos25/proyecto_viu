@@ -1,0 +1,56 @@
+INFORME TFM: MODELADO DE NICHOS PARA GLOBICEPHALA MACRORHYNCHUS
+======================================================================
+Muestra total: 8267 registros (Balanceados 1:1)
+======================================================================
+
+ MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
+AUC (Validación Cruzada): 0.9857
+ Precisión Global: 97.52% | F1-Score: 0.9747
+--------------------------------------------------
+ 1º | deptho   |  56.44% ████████████████████████████
+ 2º | uo       |  11.85% █████
+ 3º | vo       |   6.80% ███
+ 4º | o2       |   6.50% ███
+ 5º | thetao   |   6.30% ███
+ 6º | so       |   4.17% ██
+ 7º | chl      |   4.01% ██
+ 8º | zos      |   3.92% █
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.98       846
+           1       0.97      0.98      0.97       808
+
+    accuracy                           0.98      1654
+   macro avg       0.98      0.98      0.98      1654
+weighted avg       0.98      0.98      0.98      1654
+
+
+ ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
+AUC (Validación Cruzada): 0.8165
+ Precisión Global: 96.31% | F1-Score: 0.9622
+--------------------------------------------------
+ 1º | uo       |  21.23% ██████████
+ 2º | vo       |  17.38% ████████
+ 3º | o2       |  14.98% ███████
+ 4º | zos      |  12.48% ██████
+ 5º | thetao   |  11.58% █████
+ 6º | chl      |  11.36% █████
+ 7º | so       |  10.99% █████
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.96      0.96      0.96       846
+           1       0.96      0.96      0.96       808
+
+    accuracy                           0.96      1654
+   macro avg       0.96      0.96      0.96      1654
+weighted avg       0.96      0.96      0.96      1654
+
+
+======================================================================
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1692
+NUEVA VARIABLE DOMINANTE: uo
+======================================================================

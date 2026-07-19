@@ -11,3 +11,9 @@ __pycache__/
 **/*.tif
 **/*.pkl
 **/*.png
+
+# Ignorar archivos de Natural Earth Coastline
+data/gis/coast/ne_10m_coastline.*
+
+# Ignorar archivos de Natural Earth Coastline
+data/gis/coast/ne_10m_ports.*

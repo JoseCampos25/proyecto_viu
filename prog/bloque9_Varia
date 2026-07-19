@@ -1,0 +1,81 @@
+import os
+import joblib
+import numpy as np
+import xarray as xr
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
+
+# 1. Configuración de entorno y rutas
+os.environ['PROJ_LIB'] = r'C:\Users\joslo\miniconda3\envs\clima_tfm\Library\share\proj'
+especie = input("Nombre de la especie: ").strip()
+nombre_folder = especie.replace(" ", "_")
+ruta_base = r"C:\TFM\proyecto_viu"
+ruta_modelo = os.path.join(ruta_base, "data", "carpeta_especies", nombre_folder, f"modelo_RF_{nombre_folder}.pkl")
+ruta_cubo = os.path.join(ruta_base, "data", "carpeta_cubo", "par_ambientales", "cubo_ambiental_macaronesia.nc")
+ruta_output = os.path.join(ruta_base, "results", "mapas", f"Conflicto_Trafico_{nombre_folder}.png")
+os.makedirs(os.path.dirname(ruta_output), exist_ok=True)
+
+# 2. Carga y Predicción del Nicho
+print("⏳ Cargando modelo y calculando probabilidad...")
+modelo = joblib.load(ruta_modelo)
+
+with xr.open_dataset(ruta_cubo) as ds:
+    ds_mapa = ds.isel(time=0)
+    lon_min, lon_max = float(ds.longitude.min()), float(ds.longitude.max())
+    lat_min, lat_max = float(ds.latitude.min()), float(ds.latitude.max())
+    
+    mask = ds_mapa['deptho'].notnull().squeeze()
+    variables = ['thetao', 'so', 'uo', 'vo', 'zos', 'chl', 'o2', 'deptho']
+    datos = np.column_stack([ds_mapa[v].squeeze().values[mask.values] for v in variables])
+    
+    prob = modelo.predict_proba(datos)[:, 1]
+    grid = np.zeros(mask.shape)
+    grid[mask.values] = prob
+    grid = np.flipud(grid)
+    grid[grid == 0] = np.nan
+
+# 3. Definición de Rutas y Puertos (Red de Conectividad)
+nodos = {
+    "Canarias": (-15.4, 28.1),
+    "CaboVerde": (-23.5, 14.9),
+    "Azores": (-27.2, 37.7),
+    "Madeira": (-16.9, 32.6),
+    "Africa": (-17.4, 14.7)
+}
+conexiones = [
+    ("Canarias", "CaboVerde"), ("Canarias", "Madeira"), 
+    ("Canarias", "Africa"), ("Madeira", "Azores"), ("Africa", "CaboVerde")
+]
+
+# 4. Renderizado Final del Mapa de Conflicto
+print("🚀 Generando mapa final...")
+fig = plt.figure(figsize=(10, 8))
+ax = plt.axes(projection=ccrs.PlateCarree())
+ax.set_extent([lon_min, lon_max, lat_min, lat_max], crs=ccrs.PlateCarree())
+
+# A. Capa de Nicho (Fondo)
+cmap = plt.get_cmap('magma').copy()
+cmap.set_bad(color='black')
+im = ax.imshow(grid, origin='upper', extent=[lon_min, lon_max, lat_min, lat_max], 
+               transform=ccrs.PlateCarree(), cmap=cmap, vmin=0.3, vmax=1.0, zorder=1)
+
+# B. Capa Tierra y Costa
+ax.add_feature(cfeature.LAND, facecolor='#393731', edgecolor='white', linewidth=1.5, zorder=2)
+ax.coastlines(resolution='50m', color='white', linewidth=1.0, zorder=2)
+
+# C. Capa Rutas y Puertos
+for inicio, fin in conexiones:
+    p1, p2 = nodos[inicio], nodos[fin]
+    ax.plot([p1[0], p2[0]], [p1[1], p2[1]], color='cyan', linestyle='--', 
+            linewidth=1.5, transform=ccrs.PlateCarree(), zorder=3)
+
+ax.scatter([n[0] for n in nodos.values()], [n[1] for n in nodos.values()], 
+           color='white', edgecolors='black', s=20, transform=ccrs.PlateCarree(), zorder=4)
+
+# 5. Ajustes finales y guardado
+plt.colorbar(im, ax=ax, label='Probabilidad de Presencia')
+plt.title(f"Conflictos: Rutas Marítimas vs Nicho de {especie}")
+plt.savefig(ruta_output, dpi=300, bbox_inches='tight')
+print(f"✅ ÉXITO: Mapa generado en {ruta_output}")
+plt.close('all')

@@ -18,7 +18,7 @@ especie = input("Introduce el nombre científico de la especie (ej: Orcinus orca
 
 ruta_de_este_script = os.path.dirname(os.path.abspath(__file__))
 ruta_raiz = os.path.dirname(ruta_de_este_script)
-carpeta_especies = os.path.join(ruta_raiz, "data", "especies")
+carpeta_especies = os.path.join(ruta_raiz, "data", "carpeta_especies")
 if not os.path.exists(carpeta_especies):
     os.makedirs(carpeta_especies)
     print(f"Carpeta creada: {carpeta_especies}")

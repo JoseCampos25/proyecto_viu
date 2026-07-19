@@ -1,20 +1,18 @@
 INFORME TFM: MODELADO DE NICHOS PARA ORCINUS ORCA
 ======================================================================
-Muestra total: 564 registros (Balanceados 1:1)
-======================================================================
 
  MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
 AUC (Validación Cruzada): 0.8723
  Precisión Global: 91.15% | F1-Score: 0.9074
 --------------------------------------------------
- 1º | deptho   |  32.01% ████████████████
- 2º | uo       |  18.34% █████████
- 3º | so       |  12.80% ██████
- 4º | o2       |   8.33% ████
- 5º | thetao   |   7.98% ███
- 6º | zos      |   7.65% ███
- 7º | vo       |   6.86% ███
- 8º | chl      |   6.04% ███
+deptho   |  32.01% ████████████████
+uo       |  18.34% █████████
+so       |  12.80% ██████
+o2       |   8.33% ████
+thetao   |   7.98% ███
+zos      |   7.65% ███
+vo       |   6.86% ███
+chl      |   6.04% ███
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
@@ -31,13 +29,13 @@ weighted avg       0.91      0.91      0.91       113
 AUC (Validación Cruzada): 0.7341
  Precisión Global: 87.61% | F1-Score: 0.8704
 --------------------------------------------------
- 1º | uo       |  24.09% ████████████
- 2º | so       |  18.45% █████████
- 3º | o2       |  14.19% ███████
- 4º | zos      |  12.68% ██████
- 5º | thetao   |  11.56% █████
- 6º | vo       |  10.54% █████
- 7º | chl      |   8.49% ████
+uo       |  24.09% ████████████
+so       |  18.45% █████████
+o2       |  14.19% ███████
+zos      |  12.68% ██████
+thetao   |  11.56% █████
+vo       |  10.54% █████
+chl      |   8.49% ████
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
@@ -50,7 +48,4 @@ DETALLE ESTADÍSTICO:
 weighted avg       0.88      0.88      0.88       113
 
 
-======================================================================
- IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1382
-NUEVA VARIABLE DOMINANTE: uo
-======================================================================
+IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1382
