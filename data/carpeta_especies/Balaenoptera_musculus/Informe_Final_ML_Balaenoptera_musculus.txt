@@ -1,0 +1,56 @@
+INFORME TFM: MODELADO DE NICHOS PARA BALAENOPTERA MUSCULUS
+======================================================================
+Muestra total: 3909 registros (Balanceados 1:1)
+======================================================================
+
+ MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
+AUC (Validación Cruzada): 0.9585
+ Precisión Global: 98.08% | F1-Score: 0.9796
+--------------------------------------------------
+ 1º | deptho   |  34.51% █████████████████
+ 2º | uo       |  20.86% ██████████
+ 3º | o2       |   8.96% ████
+ 4º | thetao   |   8.74% ████
+ 5º | chl      |   8.67% ████
+ 6º | vo       |   7.67% ███
+ 7º | zos      |   5.94% ██
+ 8º | so       |   4.65% ██
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.99      0.97      0.98       419
+           1       0.97      0.99      0.98       363
+
+    accuracy                           0.98       782
+   macro avg       0.98      0.98      0.98       782
+weighted avg       0.98      0.98      0.98       782
+
+
+ ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
+AUC (Validación Cruzada): 0.8715
+ Precisión Global: 97.57% | F1-Score: 0.9741
+--------------------------------------------------
+ 1º | uo       |  26.32% █████████████
+ 2º | o2       |  16.74% ████████
+ 3º | chl      |  13.52% ██████
+ 4º | vo       |  12.95% ██████
+ 5º | thetao   |  12.49% ██████
+ 6º | so       |   9.08% ████
+ 7º | zos      |   8.90% ████
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.99      0.97      0.98       419
+           1       0.96      0.99      0.97       363
+
+    accuracy                           0.98       782
+   macro avg       0.98      0.98      0.98       782
+weighted avg       0.98      0.98      0.98       782
+
+
+======================================================================
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.0870
+NUEVA VARIABLE DOMINANTE: uo
+======================================================================

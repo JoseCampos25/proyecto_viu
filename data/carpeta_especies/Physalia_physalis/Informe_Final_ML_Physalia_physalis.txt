@@ -1,0 +1,56 @@
+INFORME TFM: MODELADO DE NICHOS PARA PHYSALIA PHYSALIS
+======================================================================
+Muestra total: 342 registros (Balanceados 1:1)
+======================================================================
+
+ MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
+AUC (Validación Cruzada): 0.9813
+ Precisión Global: 98.55% | F1-Score: 0.9851
+--------------------------------------------------
+ 1º | chl      |  25.87% ████████████
+ 2º | thetao   |  25.81% ████████████
+ 3º | o2       |  21.12% ██████████
+ 4º | so       |   9.96% ████
+ 5º | uo       |   5.24% ██
+ 6º | deptho   |   5.05% ██
+ 7º | zos      |   4.79% ██
+ 8º | vo       |   2.15% █
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.99        35
+           1       1.00      0.97      0.99        34
+
+    accuracy                           0.99        69
+   macro avg       0.99      0.99      0.99        69
+weighted avg       0.99      0.99      0.99        69
+
+
+ ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
+AUC (Validación Cruzada): 0.9702
+ Precisión Global: 97.10% | F1-Score: 0.9697
+--------------------------------------------------
+ 1º | o2       |  28.28% ██████████████
+ 2º | thetao   |  27.70% █████████████
+ 3º | chl      |  24.07% ████████████
+ 4º | so       |   7.24% ███
+ 5º | zos      |   6.19% ███
+ 6º | uo       |   3.66% █
+ 7º | vo       |   2.86% █
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97        35
+           1       1.00      0.94      0.97        34
+
+    accuracy                           0.97        69
+   macro avg       0.97      0.97      0.97        69
+weighted avg       0.97      0.97      0.97        69
+
+
+======================================================================
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.0111
+NUEVA VARIABLE DOMINANTE: o2
+======================================================================

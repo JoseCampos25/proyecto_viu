@@ -32,7 +32,7 @@ with xr.open_dataset(ruta_cubo) as ds:
     lat_min, lat_max = float(ds.latitude.min()), float(ds.latitude.max())
     
     mask = ds_mapa['deptho'].notnull().squeeze()
-    variables = ['thetao', 'so', 'uo', 'vo', 'zos', 'chl', 'o2']
+    variables = ['thetao', 'so', 'uo', 'vo', 'zos', 'chl', 'o2', 'deptho']
     datos = np.column_stack([ds_mapa[v].squeeze().values[mask.values] for v in variables])
     
     prob = modelo.predict_proba(datos)[:, 1]

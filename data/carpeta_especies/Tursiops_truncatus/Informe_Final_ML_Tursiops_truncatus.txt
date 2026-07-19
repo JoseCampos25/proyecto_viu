@@ -1,0 +1,56 @@
+INFORME TFM: MODELADO DE NICHOS PARA TURSIOPS TRUNCATUS
+======================================================================
+Muestra total: 15828 registros (Balanceados 1:1)
+======================================================================
+
+ MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
+AUC (Validación Cruzada): 0.9668
+ Precisión Global: 95.74% | F1-Score: 0.9551
+--------------------------------------------------
+ 1º | deptho   |  51.35% █████████████████████████
+ 2º | uo       |  15.24% ███████
+ 3º | thetao   |   6.74% ███
+ 4º | vo       |   6.43% ███
+ 5º | chl      |   5.87% ██
+ 6º | o2       |   5.24% ██
+ 7º | zos      |   5.11% ██
+ 8º | so       |   4.01% ██
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.95      0.97      0.96      1651
+           1       0.96      0.95      0.96      1515
+
+    accuracy                           0.96      3166
+   macro avg       0.96      0.96      0.96      3166
+weighted avg       0.96      0.96      0.96      3166
+
+
+ ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
+AUC (Validación Cruzada): 0.8187
+ Precisión Global: 94.95% | F1-Score: 0.9459
+--------------------------------------------------
+ 1º | uo       |  23.99% ███████████
+ 2º | chl      |  14.92% ███████
+ 3º | thetao   |  13.71% ██████
+ 4º | vo       |  13.29% ██████
+ 5º | zos      |  11.98% █████
+ 6º | o2       |  11.65% █████
+ 7º | so       |  10.45% █████
+
+DETALLE ESTADÍSTICO:
+              precision    recall  f1-score   support
+
+           0       0.93      0.97      0.95      1651
+           1       0.97      0.92      0.95      1515
+
+    accuracy                           0.95      3166
+   macro avg       0.95      0.95      0.95      3166
+weighted avg       0.95      0.95      0.95      3166
+
+
+======================================================================
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1482
+NUEVA VARIABLE DOMINANTE: uo
+======================================================================

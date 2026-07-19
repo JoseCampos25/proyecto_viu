@@ -55,8 +55,8 @@ with rasterio.open(ruta_gebco) as src_gebco: #abrimos gebco que contiene la bari
     #Generamos un punto aleatorio con lat y lon aleatorios que luego pincharemos en el cubo con dicho punto para extraer los datos
     while len(datos_lista) < n_objetivo: #Repite hasta generar todas las ausencias necesaria
         ref = df_p.sample(1).iloc[0] #Toma una presencia real como referencia
-        lat_sim = ref['latitud'] + np.random.uniform(-2, 2) #Crea una latitud y longitud simulada
-        lon_sim = ref['longitud'] + np.random.uniform(-2, 2)
+        lat_sim = ref['latitud'] + np.random.uniform(-6, 6) #Crea una latitud y longitud simulada
+        lon_sim = ref['longitud'] + np.random.uniform(-6, 6)
         
         f_min, f_max = df_p['fechas'].min().value, df_p['fechas'].max().value #Genera una fecha aleatoria dentro del rango real asi las ausencias respetan la estacionalidad de las especies
         ts_sim = np.random.randint(f_min, f_max, dtype=np.int64)
