@@ -83,7 +83,7 @@ def configurar_mapa(ax, grid, cmap_name, titulo, vmin, vmax):
     ax.set_title(titulo)
     return im
 
-im1 = configurar_mapa(axes[0], grid_prob, 'magma', f'Probabilidad de Presencia: {especie}', 0.3, 1.0)
+im1 = configurar_mapa(axes[0], grid_prob, 'magma', f'Probabilidad de Presencia: {especie}', 0.0, 1.0)
 plt.colorbar(im1, ax=axes[0], fraction=0.046, pad=0.04, label='Probabilidad')
 
 im2 = configurar_mapa(axes[1], grid_incert, 'inferno', 'Incertidumbre (Desv. Estándar)', 0, 0.5)
