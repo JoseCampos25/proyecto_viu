@@ -11,9 +11,17 @@ __pycache__/
 **/*.tif
 **/*.pkl
 **/*.png
-
-# Ignorar archivos de Natural Earth Coastline
-data/gis/coast/ne_10m_coastline.*
-
-# Ignorar archivos de Natural Earth Coastline
-data/gis/ports/ne_10m_ports.*
+data/carpeta_cubo/
+parametros_ambientales/
+clima_tfm/
+.conda/
+__pycache__/
+*.nc
+*.csv
+*.tif
+*.pkl
+*.png
+data/gis/coast/
+data/gis/ports/
+data/carpeta_especies/
+.snakemake/

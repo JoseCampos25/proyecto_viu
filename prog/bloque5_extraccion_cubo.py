@@ -4,11 +4,14 @@
 import xarray as xr  #Es la herramienta que permite abrir y manipular el cubo ambiental NetCDF
 import pandas as pd   #Es la librería que maneja tablas y CSVs.
 import os       #Es una librería del sistema operativo, construye rutas, comprueba si el csv de ntrada exsite...
-
+import sys
 #-------------------------------------------------RUTAS----------------------------------------------
-
-
-especie = input("Introduce el nombre científico de la especie: ").strip()  #Pide el nombre cientifico
+if len(sys.argv) > 1:
+    especie = sys.argv[1].replace("_", " ")
+    print(f"Especie recibida automáticamente: {especie}")
+else:
+    especie = input("Introduce el nombre científico de la especie: ").strip()
+    
 nombre_carpeta_especie = especie.replace(" ", "_")      #Crea un nombre de carpeta para despues construir las rutas.
 
 ruta_de_este_script = os.path.dirname(os.path.abspath(__file__))

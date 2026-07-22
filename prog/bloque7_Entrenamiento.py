@@ -11,9 +11,15 @@ from sklearn.model_selection import train_test_split, cross_val_score #Son esenc
 from sklearn.ensemble import RandomForestClassifier #con esto creamos el modelo random forest
 from sklearn.metrics import roc_auc_score, classification_report, accuracy_score, f1_score #Lo usaremos para calcular metricas del modelo
 import joblib
-
+import sys
 #-------------------------------------------ENTRADA Y RUTAS-------------------------------------------------------------
-especie_input = input("Especie para análisis completo (ej: Physeter macrocephalus): ").strip()
+
+
+if len(sys.argv) > 1:
+    especie_input = sys.argv[1].replace("_", " ")
+    print(f"Especie recibida automáticamente: {especie_input}")
+else:
+    especie_input = input("Especie para análisis completo (ej: Physeter macrocephalus): ").strip()
 nombre_folder = especie_input.replace(" ", "_") #los espacios en blancos se sustituyen por barras bajas
 
 ruta_de_este_script = os.path.dirname(os.path.abspath(__file__))

@@ -4,53 +4,53 @@ Muestra total: 564 registros (Balanceados 1:1)
 ======================================================================
 
  MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
-AUC (Validación Cruzada): 0.8723
- Precisión Global: 91.15% | F1-Score: 0.9074
+AUC (Validación Cruzada): 0.9466
+ Precisión Global: 93.81% | F1-Score: 0.9346
 --------------------------------------------------
- 1º | deptho   |  32.01% ████████████████
- 2º | uo       |  18.34% █████████
- 3º | so       |  12.80% ██████
- 4º | o2       |   8.33% ████
- 5º | thetao   |   7.98% ███
- 6º | zos      |   7.65% ███
- 7º | vo       |   6.86% ███
- 8º | chl      |   6.04% ███
+ 1º | deptho   |  41.47% ████████████████████
+ 2º | uo       |  17.10% ████████
+ 3º | so       |  10.68% █████
+ 4º | zos      |   8.08% ████
+ 5º | vo       |   7.06% ███
+ 6º | thetao   |   5.79% ██
+ 7º | chl      |   5.20% ██
+ 8º | o2       |   4.62% ██
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
 
-           0       0.90      0.93      0.92        58
-           1       0.92      0.89      0.91        55
+           0       0.92      0.97      0.94        58
+           1       0.96      0.91      0.93        55
 
-    accuracy                           0.91       113
-   macro avg       0.91      0.91      0.91       113
-weighted avg       0.91      0.91      0.91       113
+    accuracy                           0.94       113
+   macro avg       0.94      0.94      0.94       113
+weighted avg       0.94      0.94      0.94       113
 
 
  ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
-AUC (Validación Cruzada): 0.7341
- Precisión Global: 87.61% | F1-Score: 0.8704
+AUC (Validación Cruzada): 0.7695
+ Precisión Global: 91.15% | F1-Score: 0.9038
 --------------------------------------------------
- 1º | uo       |  24.09% ████████████
- 2º | so       |  18.45% █████████
- 3º | o2       |  14.19% ███████
- 4º | zos      |  12.68% ██████
- 5º | thetao   |  11.56% █████
- 6º | vo       |  10.54% █████
- 7º | chl      |   8.49% ████
+ 1º | uo       |  24.66% ████████████
+ 2º | so       |  17.64% ████████
+ 3º | zos      |  16.17% ████████
+ 4º | vo       |  12.44% ██████
+ 5º | thetao   |  10.33% █████
+ 6º | chl      |   9.69% ████
+ 7º | o2       |   9.08% ████
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
 
-           0       0.87      0.90      0.88        58
-           1       0.89      0.85      0.87        55
+           0       0.88      0.97      0.92        58
+           1       0.96      0.85      0.90        55
 
-    accuracy                           0.88       113
-   macro avg       0.88      0.88      0.88       113
-weighted avg       0.88      0.88      0.88       113
+    accuracy                           0.91       113
+   macro avg       0.92      0.91      0.91       113
+weighted avg       0.92      0.91      0.91       113
 
 
 ======================================================================
- IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1382
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1771
 NUEVA VARIABLE DOMINANTE: uo
 ======================================================================

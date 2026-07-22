@@ -7,11 +7,18 @@ import joblib
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
+import sys
 
 # 1. Configuración
-especie = input("Nombre de la especie: ").strip()
+if len(sys.argv) > 1:
+    especie = sys.argv[1].replace("_", " ")
+    print(f"Especie recibida automáticamente: {especie}")
+else:
+    especie = input("Nombre de la especie: ").strip()
 nombre_folder = especie.replace(" ", "_")
-ruta_base = r"C:\TFM\proyecto_viu"
+ruta_de_este_script = os.path.dirname(os.path.abspath(__file__))
+ruta_base = os.path.dirname(ruta_de_este_script)
+
 ruta_modelo = os.path.join(ruta_base, "data", "carpeta_especies", nombre_folder, f"modelo_RF_{nombre_folder}.pkl")
 ruta_cubo = os.path.join(ruta_base, "data", "carpeta_cubo", "par_ambientales", "cubo_ambiental_macaronesia.nc")
 ruta_output = os.path.join(ruta_base, "results", "mapas", f"Mapa_Nicho_Incertidumbre_{nombre_folder}.png")

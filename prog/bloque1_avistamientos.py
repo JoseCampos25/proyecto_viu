@@ -7,10 +7,15 @@ from datetime import datetime #Convierte cadenas de texto en fechas y te permite
 import folium #Para generar mapas interactivos
 import csv #Guardar datos en archivos csv
 import os #Permite gestionar archivos y carpetas
+import sys  # Permite leer argumentos desde la terminal
 
 
 #----------------- PEDIR NOMBRE CIENTIFICO ----------------------
-especie = input("Introduce el nombre científico de la especie (ej: Orcinus orca): ").strip()
+if len(sys.argv) > 1:
+    especie = sys.argv[1].replace("_", " ")
+    print(f"Especie recibida automáticamente: {especie}")
+else:
+    especie = input("Introduce el nombre científico de la especie (ej: Orcinus orca): ").strip()
 
 
 #-------------------- CREAMOS DIRECTORIO PARA LOS DATOS-------Or--------------------

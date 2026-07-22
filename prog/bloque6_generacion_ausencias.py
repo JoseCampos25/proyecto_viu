@@ -11,10 +11,16 @@ import xarray as xr #Para trabajar con el cubo ambiental que esta en formato Net
 import os           #Sirve para generar rutas, crear carpetas...
 import rasterio     #Para abrir archivos gebco entre otros
 from tqdm import tqdm #Añade una barra de progreso al bucle que genera ausencias visualiza cuantas ausencias se llevan generadas
-
+import sys
 #-------------------------------------------ENTRADA Y RUTAS-------------------------------------------------------------
 
-especie = input("Introduce el nombre científico de la especie (ej: Balaenoptera musculus): ").strip()
+
+if len(sys.argv) > 1:
+    especie = sys.argv[1].replace("_", " ")
+    print(f"Especie recibida automáticamente: {especie}")
+else:
+    especie = input("Introduce el nombre científico de la especie (ej: Balaenoptera musculus): ").strip()
+
 nombre_carpeta = especie.replace(" ", "_")   # Creamos variable con el nombre de la carpeta
 
 # 1. Enraizamiento dinámico del script
