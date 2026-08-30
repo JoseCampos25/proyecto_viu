@@ -1,4 +1,4 @@
-######
+
 # En este script se genera un dataset balanceado de presencias y ausencias para una especie marina. Este dataset va acombinar:
 #Presencias reales (que vienen de los avistamientos)
 #Ausencias simuladas (generadas artificialmente pero con condiciones ecologicos realistas)

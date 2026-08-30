@@ -1,56 +1,56 @@
 INFORME TFM: MODELADO DE NICHOS PARA STENELLA COERULEOALBA
 ======================================================================
-Muestra total: 5858 registros (Balanceados 1:1)
+Muestra total: 6132 registros (Balanceados 1:1)
 ======================================================================
 
  MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
-AUC (Validación Cruzada): 0.9410
- Precisión Global: 94.62% | F1-Score: 0.9443
+AUC (Validación Cruzada): 0.9723
+ Precisión Global: 96.66% | F1-Score: 0.9641
 --------------------------------------------------
- 1º | deptho   |  39.02% ███████████████████
- 2º | uo       |  17.28% ████████
- 3º | chl      |  10.50% █████
- 4º | thetao   |   9.03% ████
- 5º | o2       |   7.55% ███
- 6º | vo       |   6.00% ██
- 7º | zos      |   5.34% ██
- 8º | so       |   5.27% ██
+ 1º | deptho   |  47.88% ███████████████████████
+ 2º | uo       |  14.33% ███████
+ 3º | chl      |  10.14% █████
+ 4º | thetao   |   6.83% ███
+ 5º | so       |   6.76% ███
+ 6º | o2       |   5.00% ██
+ 7º | zos      |   4.71% ██
+ 8º | vo       |   4.34% ██
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
 
-           0       0.95      0.95      0.95       608
-           1       0.94      0.95      0.94       564
+           0       0.97      0.97      0.97       654
+           1       0.97      0.96      0.96       573
 
-    accuracy                           0.95      1172
-   macro avg       0.95      0.95      0.95      1172
-weighted avg       0.95      0.95      0.95      1172
+    accuracy                           0.97      1227
+   macro avg       0.97      0.97      0.97      1227
+weighted avg       0.97      0.97      0.97      1227
 
 
  ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
-AUC (Validación Cruzada): 0.8229
- Precisión Global: 93.34% | F1-Score: 0.9304
+AUC (Validación Cruzada): 0.8820
+ Precisión Global: 92.83% | F1-Score: 0.9227
 --------------------------------------------------
- 1º | uo       |  23.89% ███████████
- 2º | chl      |  17.57% ████████
- 3º | thetao   |  14.55% ███████
- 4º | o2       |  12.84% ██████
- 5º | vo       |  10.95% █████
- 6º | zos      |  10.36% █████
- 7º | so       |   9.84% ████
+ 1º | uo       |  23.46% ███████████
+ 2º | chl      |  18.58% █████████
+ 3º | so       |  14.32% ███████
+ 4º | thetao   |  13.37% ██████
+ 5º | zos      |  10.59% █████
+ 6º | o2       |   9.97% ████
+ 7º | vo       |   9.71% ████
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
 
-           0       0.93      0.94      0.94       608
-           1       0.94      0.92      0.93       564
+           0       0.93      0.94      0.93       654
+           1       0.93      0.92      0.92       573
 
-    accuracy                           0.93      1172
-   macro avg       0.93      0.93      0.93      1172
-weighted avg       0.93      0.93      0.93      1172
+    accuracy                           0.93      1227
+   macro avg       0.93      0.93      0.93      1227
+weighted avg       0.93      0.93      0.93      1227
 
 
 ======================================================================
- IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1181
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.0903
 NUEVA VARIABLE DOMINANTE: uo
 ======================================================================

@@ -108,6 +108,38 @@ registros_filtrados= [      #Recorre todos los registros y se queda solo con los
     
 registros_ordenados= sorted(registros_filtrados, key= lambda x: x["fecha_sort"]) #coge los registros filtrados y los ordena a traves de fecha_sort y los guarda en una nueva lista registros_ordenados
     
+#-------------------------RALEO ESPACIAL Y TEMPORAL (SPATIAL THINNING)------------------------
+# Definimos la resolución de la rejilla (por ejemplo, celdas de 0.1 grados ~ 11 km, ajústalo al NetCDF)
+resolucion_rejilla = 0.1 
+celdas_procesadas = {}
+
+for r in registros_filtrados:
+    if r["lat"] is not None and r["lon"] is not None:
+        # Redondeamos las coordenadas según la resolución de la celda
+        lat_celda = round(r["lat"] / resolucion_rejilla) * resolucion_rejilla
+        lon_celda = round(r["lon"] / resolucion_rejilla) * resolucion_rejilla
+        
+        # Clave única combinando la celda espacial y la fecha exacta del avistamiento
+        clave_celda_fecha = (lat_celda, lon_celda, r["fecha"])
+        
+        # Si la celda en esa fecha no existe todavía, la guardamos
+        if clave_celda_fecha not in celdas_procesadas:
+            celdas_procesadas[clave_celda_fecha] = {
+                "fecha": r["fecha"],
+                "hora": r["hora"],
+                "lat": lat_celda,  # Usamos el centroide de la celda o puedes conservar r["lat"]
+                "lon": lon_celda,
+                "fecha_sort": r["fecha_sort"]
+            }
+
+# Convertimos de nuevo a lista tras el raleo
+registros_raleados = list(celdas_procesadas.values())
+
+print(f"Registros originales post-2010: {len(registros_filtrados)}")
+print(f"Registros tras el raleo espacial/temporal (resolución {resolucion_rejilla}°): {len(registros_raleados)}")
+
+registros_ordenados = sorted(registros_raleados, key= lambda x: x["fecha_sort"])
+
 
 #----------------------DEFINIMOS RUTA Y NOMBRE DE ARCHIVOS-----------------------------------------------------
 # Definimos las rutas dentro de la carpeta de la especie

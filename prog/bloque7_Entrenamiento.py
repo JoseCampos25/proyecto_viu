@@ -44,7 +44,7 @@ def limpiar_valor(x): #- Define una función llamada limpiar_valor que servirá 
         return float(x.replace('[', '').replace(']', '')) #-Si es un string, elimina los corchetes [ ] y convierte el resultado a número flotante
     return x        #Si no es un string, devuelve el valor tal cual
 
-variables_completas = ['thetao', 'so', 'uo', 'vo', 'zos', 'chl', 'o2', 'deptho'] #Creamos una lista con los nombres de todas las variables ambientales que quieres limpiar y usar en el modelo
+variables_completas = ['thetao', 'so', 'uo', 'vo','zos', 'chl','o2','deptho'] #Creamos una lista con los nombres de todas las variables ambientales que quieres limpiar y usar en el modelo
 
 for var in variables_completas: #Inicia un bucle que recorre cada variable de la lista
     df[var] = df[var].apply(limpiar_valor) #- Aplica la función limpiar_valor a cada valor de esa columna del DataFram

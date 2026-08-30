@@ -12,13 +12,13 @@ print("🔍 Iniciando la inspección del Cubo Ambiental...")
 
 #----------------------------------------------------- COMPROBACIÓN ---------------------------------------
 if not os.path.exists(path_cubo):
-    print(f"❌ Error: No se encuentra el archivo del cubo en {path_cubo}")
+    print(f"Error: No se encuentra el archivo del cubo en {path_cubo}")
     print("Asegúrate de haber ejecutado primero el script de fusión.")
 else:
     # Abrimos el cubo generado
     cubo = xr.open_dataset(path_cubo)
     
-    print("\n📊 --- RESUMEN DE VARIABLES ENCONTRADAS ---")
+    print("\n --- RESUMEN DE VARIABLES ENCONTRADAS ---")
     print(f"El cubo contiene las siguientes variables: {list(cubo.data_vars)}\n")
     
     # Recorremos cada variable ambiental para analizar su contenido
@@ -52,11 +52,11 @@ else:
         
         # Alerta si la variable es un desierto de ceros o NaNs
         if datos_validos == 0:
-            print(f"   🚨 ALERTA: ¡La variable '{var}' NO tiene datos útiles! Son todo ceros o NaNs.")
+            print(f"ALERTA: ¡La variable '{var}' NO tiene datos útiles! Son todo ceros o NaNs.")
         elif pct_ceros > 95:
-            print(f"   ⚠️ ADVERTENCIA: Más del 95% de '{var}' son ceros. Revisa si es normal.")
+            print(f"ADVERTENCIA: Más del 95% de '{var}' son ceros. Revisa si es normal.")
         else:
-            print(f"   ✅ Variable '{var}' verificada correctamente.")
+            print(f"Variable '{var}' verificada correctamente.")
         print("-" * 50)
 
-    print("\n🏁 ¡Inspección terminada!")
+    print("\n¡Inspección terminada!")

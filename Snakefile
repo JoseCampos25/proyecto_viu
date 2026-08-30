@@ -54,4 +54,4 @@ rule generar_mapa_desvest:
         mapa_nicho="results/mapas/Mapa_Nicho_Incertidumbre_{especie}.png",
         scatter="results/mapas/Scatter_Validacion_{especie}.png"
     shell:
-        "python prog/bloque11_plots.py {wildcards.especie}"
+        "python prog/bloque8_plots.py {wildcards.especie}"
