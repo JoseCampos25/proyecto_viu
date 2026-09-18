@@ -14,7 +14,7 @@ import shutil
 rango_longitud= [-32.0, -13.0]
 rango_latitud= [14.0, 40.0]
 fecha_inicio= "2010-01-01T00:00:00"
-fecha_fin= "2025-11-30T00:00:00"
+fecha_fin= "2026-08-30T00:00:00"
 
 def descarga_datos(): #definimos una funcion que despues llamaremos, es una recomendacion para que el script se vea mas ordenado, se podria hacer sin esta funcion.
     print("Comenzando la descarga de datos")

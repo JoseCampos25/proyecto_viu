@@ -50,8 +50,10 @@ for var in variables_completas: #Inicia un bucle que recorre cada variable de la
     df[var] = df[var].apply(limpiar_valor) #- Aplica la función limpiar_valor a cada valor de esa columna del DataFram
 
 
-df = df.dropna(subset=variables_completas + ['presencia']) #- Elimina cualquier fila que tenga valores faltantes (NaN) en las variables ambientales o en la columna presencia
-
+# Interpolamos los nulos ambientales con el vecino más cercano para no descartar registros
+df[variables_completas] = df[variables_completas].interpolate(method='nearest', axis=0)
+df[variables_completas] = df[variables_completas].fillna(df[variables_completas].mean())
+df = df.dropna(subset=['presencia'])
 
 #-------------------------------------------ENTRENAMIENTO DEL MODELO-------------------------------------------------------------
 #Crea una funcion que entrena un modelo con las variables y calcula las metricas (AUC, accuracy, F1) y genera un ranking de importancia de variables.

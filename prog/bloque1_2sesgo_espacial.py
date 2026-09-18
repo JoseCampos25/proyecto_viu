@@ -118,7 +118,7 @@ if coordenadas_calor:
     # Inicializa un objeto mapa base de Folium centrado en las coordenadas geográficas aproximadas [28, -20] con un nivel de zoom inicial de 5.
     mapa_calor = folium.Map(location=[28, -20], zoom_start=5)
     # Crea la capa de mapa de calor (HeatMap) utilizando las coordenadas, un radio, desenfoque y nivel máximo de zoom definidos, y la añade al mapa base.
-    HeatMap(coordenadas_calor, radius=15, blur=10, max_zoom=1).add_to(mapa_calor)
+    HeatMap(coordenadas_calor, radius=15, blur=10, max_zoom=15).add_to(mapa_calor)
     
     # Guarda el mapa interactivo generado como un archivo HTML en la ruta especificada por la variable correspondiente.
     mapa_calor.save(heatmap_filename)

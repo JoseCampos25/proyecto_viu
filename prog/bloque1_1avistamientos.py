@@ -42,7 +42,8 @@ params= {           #Diccionario para la API del OBIS para buscar la especie en 
     "scientificname": especie,
     "geometry": "POLYGON((-32 14, -32 40, -13 40, -13 14, -32 14))", #Define un poligono en formato WKT con longitudes de -32 a -13 y latitudes de 14 a 40 donde se perimetriza la region de la MAcaronesia
     "startdate": "2010-01-01",
-    "size": 10000
+    "enddate": "2026-08-31",
+    "size": 20000
 }
 url="https://api.obis.org/v3/occurrence" #el servidos de OBIS a quien pedimos los datos
 response= requests.get(url, params=params) #envia la peticion y  requests convierte nuestro diccionario params en una URL con parámetros
