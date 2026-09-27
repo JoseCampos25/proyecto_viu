@@ -1,25 +1,39 @@
 name: clima_tfm
 channels:
   - conda-forge
-  - defaults
   - bioconda
-dependencies:
-name: clima_tfm
-channels:
-  - conda-forge
   - defaults
 dependencies:
+  # Entorno Base de Python
   - python=3.10.20
+
+  # Peticiones Web, APIs y Descarga de Datos
   - requests=2.32.5
+  - copernicusmarine=2.0.0
+
+  # Tratamiento de Datos Multidimensionales y Computación
   - xarray=2025.6.1
   - netcdf4=1.7.4
   - numpy=2.2.6
   - pandas=2.3.3
+  - dask=2025.1.0
+  - bottleneck=1.4.2
+  - numexpr=2.10.2
+
+  # SIG, Rásteres y Cartografía Espacial
   - rasterio=1.4.4
   - cartopy=0.25.0
   - folium=0.20.0
+
+  # Machine Learning, Estadística y Validación
   - scikit-learn=1.7.2
   - scipy=1.15.2
+
+  # Análisis Evolutivo, Alineamientos y Filogenia (TFM)
+  - bioconda::muscle=5.1
+  - biopython=1.84
+
+  # Utilidades, Visualización y Barra de Progreso
   - joblib=1.5.3
   - tqdm=4.67.3
   - matplotlib=3.10.8

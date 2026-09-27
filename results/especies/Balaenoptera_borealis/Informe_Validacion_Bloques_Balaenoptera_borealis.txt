@@ -1,0 +1,143 @@
+
+==================================================
+  BLOQUE B7 (Fold 2) | N Total Test: 5
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 2         
+Ausencias / Fondo [N]               | 3         
+Umbral Óptimo (Max TSS)             | 0.6100
+AUC Espacial                        | 1.0000
+Índice de Boyce                     | 0.0000
+TSS (True Skill Statistic)          | 0.5000
+Sensibilidad                        | 0.5000
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+  BLOQUE B8 (Fold 3) | N Total Test: 3
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 1         
+Ausencias / Fondo [N]               | 2         
+Umbral Óptimo (Max TSS)             | 0.5900
+AUC Espacial                        | 0.0000
+Índice de Boyce                     | 0.0000
+TSS (True Skill Statistic)          | -0.5000
+Sensibilidad                        | 0.0000
+Especificidad                       | 0.5000
+==================================================
+
+==================================================
+  BLOQUE B10 (Fold 5) | N Total Test: 200
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 9         
+Ausencias / Fondo [N]               | 191       
+Umbral Óptimo (Max TSS)             | 0.6400
+AUC Espacial                        | 0.8296
+Índice de Boyce                     | 0.2000
+TSS (True Skill Statistic)          | 0.1059
+Sensibilidad                        | 0.1111
+Especificidad                       | 0.9948
+==================================================
+
+==================================================
+  BLOQUE B11 (Fold 6) | N Total Test: 127
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 7         
+Ausencias / Fondo [N]               | 120       
+Umbral Óptimo (Max TSS)             | 0.5700
+AUC Espacial                        | 0.8506
+Índice de Boyce                     | 0.8909
+TSS (True Skill Statistic)          | 0.2857
+Sensibilidad                        | 0.2857
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+  BLOQUE B12 (Fold 7) | N Total Test: 5
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 2         
+Ausencias / Fondo [N]               | 3         
+Umbral Óptimo (Max TSS)             | 0.6200
+AUC Espacial                        | 0.8333
+Índice de Boyce                     | 0.0000
+TSS (True Skill Statistic)          | 0.0000
+Sensibilidad                        | 0.0000
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+  BLOQUE B13 (Fold 8) | N Total Test: 153
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 7         
+Ausencias / Fondo [N]               | 146       
+Umbral Óptimo (Max TSS)             | 0.6300
+AUC Espacial                        | 0.8963
+Índice de Boyce                     | 0.2143
+TSS (True Skill Statistic)          | 0.6791
+Sensibilidad                        | 0.8571
+Especificidad                       | 0.8219
+==================================================
+
+==================================================
+  BLOQUE B14 (Fold 9) | N Total Test: 1196
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 927       
+Ausencias / Fondo [N]               | 269       
+Umbral Óptimo (Max TSS)             | 0.5800
+AUC Espacial                        | 0.9390
+Índice de Boyce                     | 0.0923
+TSS (True Skill Statistic)          | 0.1123
+Sensibilidad                        | 0.1197
+Especificidad                       | 0.9926
+==================================================
+
+==================================================
+  BLOQUE B15 (Fold 10) | N Total Test: 116
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 1         
+Ausencias / Fondo [N]               | 115       
+Umbral Óptimo (Max TSS)             | 0.6200
+AUC Espacial                        | 0.3174
+Índice de Boyce                     | 0.0000
+TSS (True Skill Statistic)          | 0.0000
+Sensibilidad                        | 0.0000
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+ RESUMEN GLOBAL ESPACIAL PARA: BALAENOPTERA BOREALIS
+==================================================
+ N Presencias reales (Avistamientos): 957
+ N Pseudoausencias / Fondo:          957
+ AUC Medio Espacial:                 0.7083 (±0.3314)
+ Boyce Medio:                        0.1747 (±0.2837)
+ TSS Medio:                          0.1479 (±0.3339)
+ Sensibilidad Media:                 0.2342
+ Especificidad Media:                0.9137
+--------------------------------------------------
+ IMPORTANCIA DE VARIABLES POR PERMUTACIÓN (FOLDS ESPACIALES):
+--------------------------------------------------
+ deptho          | Importancia: 0.1112 (±0.2551)
+ uo              | Importancia: 0.0180 (±0.0506)
+ o2              | Importancia: 0.0023 (±0.0510)
+ vo              | Importancia: -0.0047 (±0.0635)
+ chl             | Importancia: -0.0071 (±0.0762)
+ zos             | Importancia: -0.0128 (±0.1196)
+ thetao          | Importancia: -0.0129 (±0.0877)
+ so              | Importancia: -0.0185 (±0.1083)
+==================================================

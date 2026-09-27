@@ -1,0 +1,173 @@
+
+==================================================
+  BLOQUE B3 (Fold 2) | N Total Test: 10
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 5         
+Ausencias / Fondo [N]               | 5         
+Umbral Óptimo (Max TSS)             | 0.5700
+AUC Espacial                        | 0.3800
+Índice de Boyce                     | -0.8000
+TSS (True Skill Statistic)          | 0.0000
+Sensibilidad                        | 0.0000
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+  BLOQUE B7 (Fold 4) | N Total Test: 45
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 29        
+Ausencias / Fondo [N]               | 16        
+Umbral Óptimo (Max TSS)             | 0.5500
+AUC Espacial                        | 0.7026
+Índice de Boyce                     | 0.2050
+TSS (True Skill Statistic)          | 0.2543
+Sensibilidad                        | 0.3793
+Especificidad                       | 0.8750
+==================================================
+
+==================================================
+  BLOQUE B8 (Fold 5) | N Total Test: 24
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 19        
+Ausencias / Fondo [N]               | 5         
+Umbral Óptimo (Max TSS)             | 0.5800
+AUC Espacial                        | 0.5316
+Índice de Boyce                     | 0.4351
+TSS (True Skill Statistic)          | 0.1789
+Sensibilidad                        | 0.5789
+Especificidad                       | 0.6000
+==================================================
+
+==================================================
+  BLOQUE B10 (Fold 7) | N Total Test: 300
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 10        
+Ausencias / Fondo [N]               | 290       
+Umbral Óptimo (Max TSS)             | 0.6100
+AUC Espacial                        | 0.8572
+Índice de Boyce                     | -0.0884
+TSS (True Skill Statistic)          | 0.1793
+Sensibilidad                        | 0.2000
+Especificidad                       | 0.9793
+==================================================
+
+==================================================
+  BLOQUE B11 (Fold 8) | N Total Test: 160
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 21        
+Ausencias / Fondo [N]               | 139       
+Umbral Óptimo (Max TSS)             | 0.5700
+AUC Espacial                        | 0.9359
+Índice de Boyce                     | -0.2311
+TSS (True Skill Statistic)          | 0.5166
+Sensibilidad                        | 0.5238
+Especificidad                       | 0.9928
+==================================================
+
+==================================================
+  BLOQUE B12 (Fold 9) | N Total Test: 64
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 35        
+Ausencias / Fondo [N]               | 29        
+Umbral Óptimo (Max TSS)             | 0.5700
+AUC Espacial                        | 0.6054
+Índice de Boyce                     | 0.0361
+TSS (True Skill Statistic)          | 0.1025
+Sensibilidad                        | 0.1714
+Especificidad                       | 0.9310
+==================================================
+
+==================================================
+  BLOQUE B13 (Fold 10) | N Total Test: 185
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 22        
+Ausencias / Fondo [N]               | 163       
+Umbral Óptimo (Max TSS)             | 0.6000
+AUC Espacial                        | 0.9225
+Índice de Boyce                     | 0.2195
+TSS (True Skill Statistic)          | 0.6746
+Sensibilidad                        | 0.7727
+Especificidad                       | 0.9018
+==================================================
+
+==================================================
+  BLOQUE B14 (Fold 11) | N Total Test: 1399
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 1053      
+Ausencias / Fondo [N]               | 346       
+Umbral Óptimo (Max TSS)             | 0.5600
+AUC Espacial                        | 0.9273
+Índice de Boyce                     | -0.1591
+TSS (True Skill Statistic)          | 0.4697
+Sensibilidad                        | 0.4957
+Especificidad                       | 0.9740
+==================================================
+
+==================================================
+  BLOQUE B15 (Fold 12) | N Total Test: 159
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 40        
+Ausencias / Fondo [N]               | 119       
+Umbral Óptimo (Max TSS)             | 0.5800
+AUC Espacial                        | 0.8418
+Índice de Boyce                     | 0.1726
+TSS (True Skill Statistic)          | 0.0166
+Sensibilidad                        | 0.0250
+Especificidad                       | 0.9916
+==================================================
+
+==================================================
+  BLOQUE B16 (Fold 13) | N Total Test: 31
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 17        
+Ausencias / Fondo [N]               | 14        
+Umbral Óptimo (Max TSS)             | 0.5900
+AUC Espacial                        | 0.9055
+Índice de Boyce                     | 0.2070
+TSS (True Skill Statistic)          | 0.0588
+Sensibilidad                        | 0.0588
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+ RESUMEN GLOBAL ESPACIAL PARA: STENELLA COERULEOALBA
+==================================================
+ N Presencias reales (Avistamientos): 1251
+ N Pseudoausencias / Fondo:          1251
+ AUC Medio Espacial:                 0.7610 (±0.1861)
+ Boyce Medio:                        -0.0003 (±0.3286)
+ TSS Medio:                          0.2451 (±0.2202)
+ Sensibilidad Media:                 0.3206
+ Especificidad Media:                0.9246
+--------------------------------------------------
+ IMPORTANCIA DE VARIABLES POR PERMUTACIÓN (FOLDS ESPACIALES):
+--------------------------------------------------
+ deptho          | Importancia: 0.0953 (±0.1201)
+ vo              | Importancia: 0.0344 (±0.0530)
+ thetao          | Importancia: 0.0315 (±0.0878)
+ chl             | Importancia: 0.0208 (±0.0772)
+ zos             | Importancia: 0.0142 (±0.0451)
+ uo              | Importancia: 0.0106 (±0.0140)
+ so              | Importancia: 0.0081 (±0.0230)
+ o2              | Importancia: -0.0031 (±0.1081)
+==================================================

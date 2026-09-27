@@ -1,56 +1,56 @@
 INFORME TFM: MODELADO DE NICHOS PARA GRAMPUS GRISEUS
 ======================================================================
-Muestra total: 11320 registros (Balanceados 1:1)
+Muestra total: 4410 registros (Balanceados 1:1)
 ======================================================================
 
  MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
-AUC (Validación Cruzada): 0.9854
- Precisión Global: 97.48% | F1-Score: 0.9691
+AUC (Validación Cruzada): 0.9816
+ Precisión Global: 96.26% | F1-Score: 0.9630
 --------------------------------------------------
- 1º | deptho   |  53.95% ██████████████████████████
- 2º | uo       |  16.34% ████████
- 3º | chl      |   6.03% ███
- 4º | vo       |   5.91% ██
- 5º | thetao   |   5.31% ██
- 6º | so       |   5.23% ██
- 7º | o2       |   4.14% ██
- 8º | zos      |   3.09% █
+ 1º | deptho   |  55.93% ███████████████████████████
+ 2º | uo       |  11.38% █████
+ 3º | chl      |   8.58% ████
+ 4º | so       |   6.27% ███
+ 5º | thetao   |   5.63% ██
+ 6º | zos      |   4.30% ██
+ 7º | o2       |   4.24% ██
+ 8º | vo       |   3.66% █
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
 
-           0       0.98      0.98      0.98      1345
-           1       0.97      0.97      0.97       919
+           0       0.97      0.95      0.96       441
+           1       0.95      0.98      0.96       441
 
-    accuracy                           0.97      2264
-   macro avg       0.97      0.97      0.97      2264
-weighted avg       0.97      0.97      0.97      2264
+    accuracy                           0.96       882
+   macro avg       0.96      0.96      0.96       882
+weighted avg       0.96      0.96      0.96       882
 
 
  ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
-AUC (Validación Cruzada): 0.9049
- Precisión Global: 97.61% | F1-Score: 0.9704
+AUC (Validación Cruzada): 0.8813
+ Precisión Global: 90.93% | F1-Score: 0.9089
 --------------------------------------------------
- 1º | uo       |  27.88% █████████████
- 2º | chl      |  14.62% ███████
- 3º | so       |  13.17% ██████
- 4º | vo       |  13.06% ██████
- 5º | thetao   |  11.87% █████
- 6º | zos      |   9.85% ████
- 7º | o2       |   9.55% ████
+ 1º | uo       |  21.29% ██████████
+ 2º | chl      |  17.68% ████████
+ 3º | so       |  15.92% ███████
+ 4º | zos      |  11.85% █████
+ 5º | thetao   |  11.34% █████
+ 6º | o2       |  11.25% █████
+ 7º | vo       |  10.67% █████
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
 
-           0       0.98      0.98      0.98      1345
-           1       0.98      0.96      0.97       919
+           0       0.91      0.91      0.91       441
+           1       0.91      0.90      0.91       441
 
-    accuracy                           0.98      2264
-   macro avg       0.98      0.97      0.98      2264
-weighted avg       0.98      0.98      0.98      2264
+    accuracy                           0.91       882
+   macro avg       0.91      0.91      0.91       882
+weighted avg       0.91      0.91      0.91       882
 
 
 ======================================================================
- IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.0805
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1003
 NUEVA VARIABLE DOMINANTE: uo
 ======================================================================

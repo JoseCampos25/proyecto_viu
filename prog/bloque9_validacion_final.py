@@ -11,6 +11,7 @@ import cartopy.feature as cfeature
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import roc_auc_score, confusion_matrix, roc_curve
 from sklearn.model_selection import BaseCrossValidator
+from sklearn.inspection import permutation_importance  # <--- IMPORTACIÓN AÑADIDA
 from scipy.stats import spearmanr
 
 # ------------------------------------------- RUTAS Y ENTRADA -------------------------------------------------------------
@@ -145,6 +146,7 @@ boyce_completos = []
 tss_completos = []
 sens_completos = []
 spec_completos = []
+perm_importances_folds = []  # <--- LISTA PARA ACUMULAR IMPORTANCIAS POR PERMUTACIÓN
 
 mejor_modelo = None
 mejor_auc = -1
@@ -206,6 +208,12 @@ for fold_idx, (train_index, test_index) in enumerate(cv_espacial.split(X_espacia
         boyce_val = 0.0
     boyce_completos.append(boyce_val)
     
+    # --- CÁLCULO DE IMPORTANCIA POR PERMUTACIÓN EN EL FOLD ESPACIAL (TEST) ---
+    result_perm = permutation_importance(
+        modelo, X_test, y_test, scoring='roc_auc', n_repeats=10, random_state=42, n_jobs=-1
+    )
+    perm_importances_folds.append(result_perm.importances_mean)
+    
     if score_auc > mejor_auc:
         mejor_auc = score_auc
         mejor_modelo = modelo
@@ -253,7 +261,17 @@ for fold_idx, (train_index, test_index) in enumerate(cv_espacial.split(X_espacia
     plt.savefig(ruta_mapa_fold, dpi=300, bbox_inches='tight')
     plt.close()
 
-# Resumen Global Final con desglose de N real y pseudoausencias
+# --- PROMEDIO DE IMPORTANCIA POR PERMUTACIÓN SOBRE TODOS LOS FOLDS ---
+mean_perm_imp = np.mean(perm_importances_folds, axis=0)
+std_perm_imp = np.std(perm_importances_folds, axis=0)
+
+df_perm_imp = pd.DataFrame({
+    'Variable': variables_completas,
+    'Importancia_Media': mean_perm_imp,
+    'Desviacion_Std': std_perm_imp
+}).sort_values(by='Importancia_Media', ascending=False)
+
+# Resumen Global Final con desglose de N real, pseudoausencias e Importancia por Permutación
 n_presencias_total = int((df['presencia'] == 1).sum())
 n_ausencias_total = int((df['presencia'] == 0).sum())
 
@@ -267,6 +285,11 @@ res_blocks_final += f" Boyce Medio:                        {np.mean(boyce_comple
 res_blocks_final += f" TSS Medio:                          {np.mean(tss_completos):.4f} (±{np.std(tss_completos):.4f})\n"
 res_blocks_final += f" Sensibilidad Media:                 {np.mean(sens_completos):.4f}\n"
 res_blocks_final += f" Especificidad Media:                {np.mean(spec_completos):.4f}\n"
+res_blocks_final += f"--------------------------------------------------\n"
+res_blocks_final += f" IMPORTANCIA DE VARIABLES POR PERMUTACIÓN (FOLDS ESPACIALES):\n"
+res_blocks_final += f"--------------------------------------------------\n"
+for _, row in df_perm_imp.iterrows():
+    res_blocks_final += f" {row['Variable']:<15} | Importancia: {row['Importancia_Media']:.4f} (±{row['Desviacion_Std']:.4f})\n"
 res_blocks_final += f"==================================================\n"
 
 print(res_blocks_final)

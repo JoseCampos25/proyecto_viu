@@ -1,0 +1,83 @@
+
+==================================================
+  BLOQUE B2 (Fold 1) | N Total Test: 2
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 1         
+Ausencias / Fondo [N]               | 1         
+Umbral Óptimo (Max TSS)             | 0.7400
+AUC Espacial                        | 1.0000
+Índice de Boyce                     | 0.0000
+TSS (True Skill Statistic)          | 1.0000
+Sensibilidad                        | 1.0000
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+  BLOQUE B12 (Fold 5) | N Total Test: 5
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 4         
+Ausencias / Fondo [N]               | 1         
+Umbral Óptimo (Max TSS)             | 0.7400
+AUC Espacial                        | 1.0000
+Índice de Boyce                     | 1.0000
+TSS (True Skill Statistic)          | 0.0000
+Sensibilidad                        | 0.0000
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+  BLOQUE B13 (Fold 6) | N Total Test: 8
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 2         
+Ausencias / Fondo [N]               | 6         
+Umbral Óptimo (Max TSS)             | 0.7600
+AUC Espacial                        | 1.0000
+Índice de Boyce                     | 0.0000
+TSS (True Skill Statistic)          | 0.0000
+Sensibilidad                        | 0.0000
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+  BLOQUE B14 (Fold 7) | N Total Test: 56
+==================================================
+Métrica Evaluada                    | Valor     
+--------------------------------------------------
+Avistamientos (Presencias) [N]      | 45        
+Ausencias / Fondo [N]               | 11        
+Umbral Óptimo (Max TSS)             | 0.6500
+AUC Espacial                        | 0.9657
+Índice de Boyce                     | -0.3111
+TSS (True Skill Statistic)          | 0.0000
+Sensibilidad                        | 0.0000
+Especificidad                       | 1.0000
+==================================================
+
+==================================================
+ RESUMEN GLOBAL ESPACIAL PARA: MESOPLODON DENSIROSTRIS
+==================================================
+ N Presencias reales (Avistamientos): 52
+ N Pseudoausencias / Fondo:          52
+ AUC Medio Espacial:                 0.9914 (±0.0149)
+ Boyce Medio:                        0.1722 (±0.4945)
+ TSS Medio:                          0.2500 (±0.4330)
+ Sensibilidad Media:                 0.2500
+ Especificidad Media:                1.0000
+--------------------------------------------------
+ IMPORTANCIA DE VARIABLES POR PERMUTACIÓN (FOLDS ESPACIALES):
+--------------------------------------------------
+ deptho          | Importancia: 0.2414 (±0.1186)
+ uo              | Importancia: 0.0736 (±0.0531)
+ thetao          | Importancia: 0.0645 (±0.0780)
+ o2              | Importancia: 0.0497 (±0.0612)
+ chl             | Importancia: 0.0103 (±0.0181)
+ vo              | Importancia: 0.0069 (±0.0154)
+ zos             | Importancia: 0.0010 (±0.0017)
+ so              | Importancia: -0.0003 (±0.0005)
+==================================================

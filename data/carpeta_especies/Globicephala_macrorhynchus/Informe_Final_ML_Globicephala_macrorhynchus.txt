@@ -1,56 +1,56 @@
 INFORME TFM: MODELADO DE NICHOS PARA GLOBICEPHALA MACRORHYNCHUS
 ======================================================================
-Muestra total: 9427 registros (Balanceados 1:1)
+Muestra total: 3608 registros (Balanceados 1:1)
 ======================================================================
 
  MODELO COMPLETO (OCEANOGRAFÍA + GEBCO)
-AUC (Validación Cruzada): 0.9852
- Precisión Global: 96.92% | F1-Score: 0.9681
+AUC (Validación Cruzada): 0.9755
+ Precisión Global: 94.74% | F1-Score: 0.9472
 --------------------------------------------------
- 1º | deptho   |  60.18% ██████████████████████████████
- 2º | uo       |   9.45% ████
- 3º | vo       |   7.33% ███
- 4º | o2       |   5.55% ██
- 5º | zos      |   4.90% ██
- 6º | chl      |   4.76% ██
- 7º | thetao   |   4.34% ██
- 8º | so       |   3.49% █
+ 1º | deptho   |  57.34% ████████████████████████████
+ 2º | vo       |   8.87% ████
+ 3º | uo       |   6.80% ███
+ 4º | o2       |   6.49% ███
+ 5º | chl      |   6.20% ███
+ 6º | thetao   |   5.10% ██
+ 7º | zos      |   4.88% ██
+ 8º | so       |   4.32% ██
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
 
-           0       0.97      0.97      0.97       973
-           1       0.97      0.96      0.97       913
+           0       0.94      0.95      0.95       361
+           1       0.95      0.94      0.95       361
 
-    accuracy                           0.97      1886
-   macro avg       0.97      0.97      0.97      1886
-weighted avg       0.97      0.97      0.97      1886
+    accuracy                           0.95       722
+   macro avg       0.95      0.95      0.95       722
+weighted avg       0.95      0.95      0.95       722
 
 
  ANÁLISIS DE SENSIBILIDAD (SIN PROFUNDIDAD)
-AUC (Validación Cruzada): 0.8325
- Precisión Global: 95.44% | F1-Score: 0.9523
+AUC (Validación Cruzada): 0.8103
+ Precisión Global: 88.64% | F1-Score: 0.8842
 --------------------------------------------------
- 1º | uo       |  19.91% █████████
- 2º | vo       |  17.22% ████████
- 3º | o2       |  15.00% ███████
- 4º | zos      |  14.99% ███████
- 5º | so       |  11.41% █████
- 6º | chl      |  10.84% █████
- 7º | thetao   |  10.63% █████
+ 1º | vo       |  19.58% █████████
+ 2º | o2       |  15.18% ███████
+ 3º | uo       |  15.11% ███████
+ 4º | zos      |  13.68% ██████
+ 5º | so       |  12.70% ██████
+ 6º | chl      |  12.58% ██████
+ 7º | thetao   |  11.18% █████
 
 DETALLE ESTADÍSTICO:
               precision    recall  f1-score   support
 
-           0       0.95      0.97      0.96       973
-           1       0.96      0.94      0.95       913
+           0       0.87      0.91      0.89       361
+           1       0.90      0.87      0.88       361
 
-    accuracy                           0.95      1886
-   macro avg       0.95      0.95      0.95      1886
-weighted avg       0.95      0.95      0.95      1886
+    accuracy                           0.89       722
+   macro avg       0.89      0.89      0.89       722
+weighted avg       0.89      0.89      0.89       722
 
 
 ======================================================================
- IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1527
-NUEVA VARIABLE DOMINANTE: uo
+ IMPACTO DE LA PROFUNDIDAD (Pérdida de AUC): 0.1653
+NUEVA VARIABLE DOMINANTE: vo
 ======================================================================
